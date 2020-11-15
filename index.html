@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>10 современных раскладок в одну строку CSS-кода</title>
+	<style>
+		.source {
+			margin: 0 0 50px 0;
+		}
+
+		.link {
+			font-size: 14px;
+			color: rgb(165, 165, 165);
+		}
+
+
+		* h2 {
+			color: rgb(59, 111, 255);
+		}
+
+		* p,
+		h2 {
+			font-size: 19px;
+			font-family: Arial;
+			line-height: 25px;
+		}
+
+		h3 {
+			text-align: center;
+			color: rgb(4, 0, 255);
+			font-family: Arial;
+		}
+
+		pre {
+			background-color: rgb(214, 214, 214);
+			color: rgb(19, 38, 151);
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+
+		.xmp {
+			background-color: rgb(214, 214, 214);
+			color: rgb(19, 38, 151);
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+
+
+		code {
+			background-color: rgb(214, 214, 214);
+			padding: 1px;
+			font-weight: 600;
+			margin: 0 2px 0 2px;
+		}
+
+		.css {
+			display: grid;
+			place-items: center;
+			background-color: rgb(214, 214, 214);
+			font-size: 20px;
+			margin-top: 10px;
+			padding: 15px;
+			color: rgb(19, 38, 151);
+		}
+
+		.mainList {
+			display: inline-block;
+			margin: 50px 0 50px 0;
+			padding: 30px;
+			background-color: rgb(207, 207, 207);
+		}
+
+		.mainList ol {}
+
+		.mainList li {
+			margin: 20px 0 20px 0;
+			font: 500 16px Arial;
+		}
+
+
+		/* 01. CSS Суперцентрирование: place-items: center */
+		.centerItems {
+			display: grid;
+			place-items: center;
+			/*Заменяет align-items и justify-items */
+			margin-top: 100px;
+
+		}
+
+		.main {
+			display: inline-block;
+			border: 1px solid black;
+			padding: 10px;
+			background-color: rgb(157, 224, 255);
+		}
+
+		/* 01. CSS Суперцентрирование: place-items: center */
+
+
+
+		.adaptiveFlex {
+			margin-top: 100px;
+			background-color: rgb(232, 243, 251);
+			padding-top: 25px;
+
+		}
+
+		/* 02. CSS Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› */
+		.parent_adaptiveFlex {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			padding: 100px 0 100px 0;
+		}
+
+		.child_flexBox1,
+		.child_flexBox2,
+		.child_flexBox3 {
+			flex: 0 1 150px;
+			margin: 5px;
+
+			width: 200px;
+			height: 200px;
+			background-color: rgb(61, 255, 174);
+			border: 1px solid black;
+		}
+
+		/* 02. CSS Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› */
+
+		/* Растягивание на всю ширину 02. CSS Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› */
+		.full_parent_adaptiveFlex {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			padding: 100px 0 100px 0;
+		}
+
+		.full_child_flexBox1,
+		.full_child_flexBox2,
+		.full_child_flexBox3 {
+			flex: 1 1 150px;
+			margin: 5px;
+
+			width: 200px;
+			height: 200px;
+			background-color: rgb(61, 255, 174);
+			border: 1px solid black;
+		}
+
+		/* Растягивание на всю ширину 02. CSS Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› */
+
+		/* CSS 03. Боковая панель: grid-template-columns: minmax(<min>, <max>) 1fr) */
+		.sidePanel_parent {
+			display: grid;
+			grid-template-columns: minmax(150px, 25%) 1fr;
+
+			margin: 100px 0 100px 0;
+		}
+
+		.sidePanel_child {
+			padding: 10px;
+			font-size: 19px;
+			height: 200px;
+			background-color: rgb(61, 255, 174);
+			border: 1px solid rgb(187, 187, 187);
+		}
+
+		/* CSS 03. Боковая панель: grid-template-columns: minmax(<min>, <max>) 1fr) */
+
+
+		.pancakeStack {
+			margin-top: 100px;
+			background-color: rgb(232, 243, 251);
+			padding: 25px 0 25px 0;
+		}
+
+		.pancakeStack_sample {
+			margin: 100px 0 100px 0;
+		}
+
+		/* CSS 04. Липкий футер: grid-template-rows: auto 1fr auto */
+		.parent {
+			display: grid;
+			grid-template-rows: auto 1fr auto;
+		}
+
+		.header_child,
+		.main_child,
+		.footer_child {
+			display: grid;
+			place-items: center;
+			background-color: rgb(253, 165, 64);
+			font: 700 24px Arial;
+			color: rgb(255, 255, 255);
+			border: 1px solid #fff;
+		}
+
+		.main_child {
+			background-color: rgb(38, 141, 46);
+		}
+
+		.footer_child {
+			background-color: rgb(155, 190, 255);
+		}
+
+		/* CSS 04. Липкий футер: grid-template-rows: auto 1fr auto */
+
+		.classicHolyGrail {
+			margin-top: 100px;
+		}
+
+		.classicHolyGrailSample {
+			margin: 100px 0 100px 0;
+		}
+
+		/* CSS 05. Классический "Святой Грааль": grid-template: auto 1fr auto / auto 1fr auto */
+
+		.parent {
+			display: grid;
+			grid-template: auto 1fr auto / auto 1fr auto;
+		}
+
+		.header_child,
+		.leftSide_child,
+		.section_child,
+		.rightSide_child,
+		.footer_child {
+			background-color: rgb(253, 165, 64);
+			font: 700 24px Arial;
+			color: rgb(255, 255, 255);
+			border: 1px solid #fff;
+		}
+
+		.header_child {
+			padding: 2rem;
+			grid-column: 1 / 4;
+		}
+
+		.leftSide_child {
+			grid-column: 1 / 2;
+
+
+			text-align: center;
+			background-color: rgb(155, 190, 255);
+		}
+
+		.section_child {
+			grid-column: 2 / 3;
+
+			text-align: center;
+			background-color: rgb(146, 68, 68);
+		}
+
+		.rightSide_child {
+			grid-column: 3 / 4;
+
+			text-align: center;
+			background-color: rgb(65, 117, 60);
+		}
+
+		.footer_child {
+			grid-column: 1 / 4;
+
+			background-color: rgb(102, 31, 84);
+		}
+
+
+		/* CSS 05. Классический "Святой Грааль": grid-template: auto 1fr auto / auto 1fr auto */
+
+		.twelveColumns {
+			margin-top: 100px;
+			background-color: rgb(232, 243, 251);
+			padding: 25px 0 25px 0;
+		}
+
+		.twelveColumns_Sample {
+			margin: 100px 0 100px 0;
+		}
+
+		/* CSS 06. 12-колоночная сетка: grid-template-columns: repeat(12, 1fr) */
+		.twelveColumns_parent {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+		}
+
+		.twelveColumns_span12 {
+			grid-column: 1 / span 12;
+		}
+
+		.twelveColumns_span6 {
+			grid-column: 1 / span 6;
+		}
+
+		.twelveColumns_span4 {
+			grid-column: 4 / span 4;
+		}
+
+		.twelveColumns_span2 {
+			grid-column: 3 / span 2;
+		}
+
+		/* centering text */
+		.section {
+			display: grid;
+			place-items: center;
+			text-align: center;
+			background-color: rgb(119, 172, 250);
+			border: 1px solid #fff;
+			color: #fff;
+			height: 120px;
+			font: 600 18px Arial;
+		}
+
+		/* CSS 06. 12-колоночная сетка: grid-template-columns: repeat(12, 1fr) */
+
+
+		.RAM,
+		.RAM_Sample {
+			margin: 100px 0 100px 0;
+		}
+
+		/* CSS 07. RAM (Repeat, Auto, MinMax): grid-template-columns(auto-fit, minmax(, 1fr)) */
+		.ram_parent {
+			display: grid;
+			grid-gap: 1rem;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
+
+		.ram_box {
+			height: 150px;
+			background-color: rgb(118, 165, 251);
+			display: grid;
+			place-items: center;
+			color: #fff;
+			font: 600 38px Arial;
+		}
+
+		/* CSS 07. RAM (Repeat, Auto, MinMax): grid-template-columns(auto-fit, minmax(, 1fr)) */
+
+
+		.lineUp {
+			background-color: rgb(232, 243, 251);
+			padding: 50px 0 50px 0;
+		}
+
+		.lineUp_Sample {
+			margin: 100px 0 100px 0;
+		}
+
+		/* CSS 08. Ряд карточек: justify-content: space-between */
+		.lineUp_parent {
+			height: auto;
+			display: grid;
+			grid-gap: 1rem;
+			grid-template-columns: repeat(3, 1fr);
+
+			background-color: rgb(226, 226, 226);
+			padding: 50px 0 50px 0px;
+
+		}
+
+		.lineUp_visual {
+			height: 100px;
+			width: 100%;
+
+			background-color: rgb(0, 195, 255);
+
+		}
+
+		.lineUp_card {
+			display: flex;
+			flex-direction: column;
+			padding: 1rem;
+			justify-content: space-between;
+
+			border: 1px solid rgb(138, 78, 0);
+			background-color: rgb(255, 193, 123);
+			padding: 35px;
+		}
+
+		.lineUp_parent h3 {
+			margin: 0;
+
+			color: rgb(58, 58, 58);
+		}
+
+		/* CSS 08. Ряд карточек: justify-content: space-between */
+
+		.Clamping {
+			margin: 100px 0 100px 0;
+		}
+
+		.Clamping_Sample {
+			margin: 100px 0 100px 0;
+			padding: 50px 0 50px 0;
+			background-color: rgb(230, 230, 230);
+		}
+
+		/* CSS 09. Стилизация с помощью Clamp: clamp(<min>, <actual>, <max>) */
+		.Clamping_parent {
+			display: grid;
+			place-items: center;
+		}
+
+		.ClampingCard_child {
+			width: clamp(23ch, 50%, 46ch);
+			display: flex;
+			flex-direction: column;
+			padding: 1rem;
+
+			background-color: rgb(163, 203, 255);
+			border: 1px solid rgb(0, 153, 255);
+		}
+
+		.Clamping_yellow {
+			height: 125px;
+			width: 100%;
+
+			background-color: rgb(255, 242, 65);
+			border: 1px solid rgb(146, 144, 0);
+		}
+
+		/* CSS 09. Стилизация с помощью Clamp: clamp(<min>, <actual>, <max>) */
+		.RespectOfAspect {
+			background-color: rgb(232, 243, 251);
+			padding: 50px 0 50px 0;
+		}
+
+		.RespectOfAspect_Sample {
+			margin: 100px 0 100px 0;
+			padding: 50px 0 50px 0;
+			background-color: rgb(230, 230, 230);
+		}
+
+		/* 10. Сохранение пропорций: aspect-ratio: <width> / <height></height> */
+
+		.RespectOfAspect_parent {
+			display: grid;
+			place-items: center;
+
+		}
+
+		.RespectOfAspect_card {
+			aspect-ratio: 16 / 9;
+
+			background-color: rgb(108, 184, 255);
+			border: 1px solid rgb(0, 89, 255);
+			padding: 10px;
+		}
+
+		.RespectOfAspect_visual {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			padding: 1rem;
+		}
+
+		/* 10. Сохранение пропорций: aspect-ratio: <width> / <height></height> */
+	</style>
+</head>
+
+<body>
+
+	<div class="source">
+		<p class="link">Верстальщик: telegram <a href="https://t.me/V_Kolp" target="_blank">https://t.me/V_Kolp</a>
+			Facebook <a href="https://www.facebook.com/profile.php?id=100001757468973"
+				target="_blank">facebook.com/id=100001757468973</a> <br>
+			Исходники на английском: <a href="https://1linelayouts.glitch.me/"
+				target="_blank">https://1linelayouts.glitch.me/</a>
+			<br> Материал взят с сайта Хабр (https://habr.com/ru) по ссылке: <a href="https://habr.com/ru/post/522880/"
+				target="_blank">https://habr.com/ru/post/522880/</a> <br>
+			Автор оригинала: <a href="https://web.dev/authors/una/" target="_blank">Una Kravets</a> <br>
+			Автор перевода: <a href="https://vk.com/hisbvdis" target="_blank">Рома Зварич</a>
+		</p>
+
+	</div>
+	<ol class="mainList">
+		<h2>Содержание</h2>
+		<li><a href="#gridCenterItem"> Суперцентрирование: <code>place-items: center;</code></a></li>
+		<li><a href="#adaptiveFlex"> Адаптивные блоки: flex: <code> &lt;grow&gt;</code> <code> &lt;shrink&gt;</code>
+				<code>&lt;baseWidth&gt;
+			&lt;/baseWidth&gt;</code></a></li>
+		<li><a href="#sidePanel"> Боковая панель:
+				<code> grid-template-columns: minmax(&lt;min&gt;, &lt;max&gt;) 1fr)</code></a></li>
+		<li><a href="#pancakeStack"> Липкий футер: <code>grid-template-rows: auto 1fr auto</code></a></li>
+		<li><a href="#classicHolyGrail"> Классический "Святой Грааль":
+				<code>grid-template: auto 1fr auto / auto 1fr auto</code></a></li>
+		<li><a href="#twelveColumns"> 12-колоночная сетка: <code>grid-template-columns: repeat(12, 1fr)</code></a>
+		</li>
+		<li><a href="#RAM"> RAM (Repeat, Auto, MinMax):
+				<code>grid-template-columns(auto-fit, minmax(<base>, 1fr))</code></a></li>
+		<li><a href="#lineUp"> Ряд карточек: <code>justify-content: space-between</code></a></li>
+		<li><a href="#Clamping"> Стилизация с помощью Clamp:
+				<code>clamp(&lt;min&gt;, &lt;actual&gt;, &lt;max&gt;)</code></a></li>
+		<li><a href="#RespectOfAspect"> Сохранение пропорций:
+				<code>aspect-ratio: &lt;width&gt; / &lt;height&gt;&lt;/height&gt;</code></a></li>
+	</ol>
+
+	<div class="gridCenterItem">
+		<div class="description">
+			<h2 id="gridCenterItem">01. Суперцентрирование: <code> place-items: center; </code></h2>
+			<p>Сначала задайте родительскому элементу свойству display со значением grid, а затем для него же
+				<code>
+					place-items:
+					center
+				</code>. <br> Свойство <code> place-items </code> это краткая форма записи для
+				<code> align-items </code> и <code>justify-items </code>, с помощью
+				которого мы
+				устанавливаем оба эти свойства в значение <code> center </code>.</p>
+			<p>Данный способ приводит к идеальному центрированию содержимого внутри родителя, независимо от его размера.
+			</p>
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child"&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2>H2 Header&lt;/h2&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>Lorem ipsum dolor sit amet.&lt;/p&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button>button&lt;/button&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button>button&lt;/button&gt; <br>
+				&nbsp;&nbsp;&lt;/div&gt; <br>
+				&lt;/div&gt; <br>
+			</p>
+			<h3>CSS</h3>
+			<p class="css">
+				.parent { <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;place-items: center; <br>
+				&nbsp;&nbsp;margin-top: 100px; <br>
+				} <br> <br>
+				.child { <br>
+				&nbsp;&nbsp;display: inline-block; <br>
+				&nbsp;&nbsp;border: 1px solid black; <br>
+				&nbsp;&nbsp;padding: 10px; <br>
+				&nbsp;&nbsp;background-color: rgb(157, 224, 255); <br>
+				}
+
+			</p>
+		</div>
+		<!-- HTML Суперцентрирование: place-items: center -->
+		<div class="centerItems">
+			<div class="main">
+				<h2>H2 Header</h2>
+				<p>Lorem ipsum dolor sit amet.</p>
+				<button>button</button>
+				<button>button</button>
+			</div>
+		</div>
+		<!-- Суперцентрирование: place-items: center -->
+	</div>
+
+	<div class="adaptiveFlex">
+		<div class="description">
+			<h2 id="adaptiveFlex">02. Адаптивные блоки: flex: <code> &lt;grow&gt;</code> <code> &lt;shrink&gt;</code>
+				<code>&lt;baseWidth&gt;
+				&lt;/baseWidth&gt;</code>
+			</h2>
+			<p>Это распространённая раскладка, например, для лендингов, в которой может располагаться ряд из 3
+				элементов, обычно содержащих изображение, заголовок и текст, описывающих особенности продукта. Но мы
+				хотим, чтобы эти элементы также аккуратно располагались и при просмотре страницы с мобильных устройств.
+			</p>
+			<p>Если использовать Flexbox, вам не придётся настраивать расположение элементов для разных размеров экрана
+				с помощью медиа-запросов.</p>
+			<p>Свойство flex является сокращением и позволяет задать набор значений flex:
+				<code> &lt;flex-grow&gt;</code>
+				<code> &lt;flex-shrink&gt;</code> <code> &lt;flex-basis&gt; &lt;/flex-basis&gt;</code>
+			</p>
+			<p>Если нужно, чтобы блоки имели <code> &lt;flex-basis&gt; </code> размер, сжимались на меньших
+				размерах, но не
+				увеличивались для
+				заполнения дополнительного свободного пространства, следует указать
+				<code> flex: 0 1 &lt;flex-basis&gt;</code>.
+				В данном
+				случае <code>&lt;flex-basis&gt;</code> равно <code> 150px </code>. Код будет следующим:</p>
+
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&lt;/div&gt;
+			</p>
+
+			<h3>CSS</h3>
+			<p class="css">
+				.parent { <br>
+				&nbsp;&nbsp;display: flex; <br>
+				&nbsp;&nbsp;flex-wrap: wrap; <br>
+				&nbsp;&nbsp;justify-content: center; <br>
+				&nbsp;&nbsp;padding: 100px 0 100px 0;} <br> <br>
+
+
+				.child { <br>
+				&nbsp;&nbsp;flex: 0 1 150px; <br>
+				&nbsp;&nbsp;margin: 5px; <br>
+				&nbsp;&nbsp;width: 200px; <br>
+				&nbsp;&nbsp;height: 200px; <br>
+				&nbsp;&nbsp;background-color: rgb(61, 255, 174); <br>
+				&nbsp;&nbsp;border: 1px solid black;}
+			</p>
+			<!-- 02. HTML Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› -->
+			<div class="parent_adaptiveFlex">
+				<div class="child_flexBox1"></div>
+				<div class="child_flexBox2"></div>
+				<div class="child_flexBox3"></div>
+			</div>
+			<!-- 02. HTML Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› -->
+			<p>Если вы хотите, чтобы при переносе на новую строку блоки растягивали и заполняли пространство, установите
+				<code> &lt;flex-grow&gt; </code> в значение <code>1</code>.</p>
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="child">&lt;/div&gt; <br>
+				&lt;/div&gt;
+			</p>
+
+			<h3>CSS</h3>
+			<p class="css">
+				.parent { <br>
+				&nbsp;&nbsp;display: flex; <br>
+				&nbsp;&nbsp;flex-wrap: wrap; <br>
+				&nbsp;&nbsp;justify-content: center; <br>
+				&nbsp;&nbsp;padding: 100px 0 100px 0;} <br> <br>
+
+
+				.child { <br>
+				&nbsp;&nbsp;flex: 1 1 150px; <br>
+				&nbsp;&nbsp;margin: 5px; <br>
+				&nbsp;&nbsp;width: 200px; <br>
+				&nbsp;&nbsp;height: 200px; <br>
+				&nbsp;&nbsp;background-color: rgb(61, 255, 174); <br>
+				&nbsp;&nbsp;border: 1px solid black;}
+			</p>
+			<!-- Растягивание на всю ширину 02. HTML Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› -->
+			<div class="full_parent_adaptiveFlex">
+				<div class="full_child_flexBox1"></div>
+				<div class="full_child_flexBox2"></div>
+				<div class="full_child_flexBox3"></div>
+			</div>
+			<!-- Растягивание на всю ширину 02. HTML Адаптивные блоки: flex: ‹grow› ‹shrink› ‹baseWidth› ‹/baseWidth› -->
+		</div>
+	</div>
+
+	<div class="sidePanel">
+		<div class="description">
+			<h2 id="sidePanel">03. Боковая панель:
+				<code> grid-template-columns: minmax(&lt;min&gt;, &lt;max&gt;) 1fr)</code></h2>
+			<p>В этой демонстрации используется преимущество функции minmax для grid-раскладки. Мы устанавливаем
+				минимальный размер боковой панели равным <code> 150px </code>, но на экранах бо́льшей ширины позволяем
+				растягиваться на <code> 25% </code>. Таким образом, панель будет занимать <code> 25% </code> ширины
+				родителя, пока эти <code> 25% </code> не станут меньше <code> 150px </code>.</p>
+			<p>Укажем эту функцию в значении свойства <code>grid-template-columns</code>. Элемент в первой колонке (в
+				нашем случае
+				это боковая панель) получает minmax между <code>150px</code> и <code>25%,</code> а второй элемент (в
+				нашем случае это
+				main)
+				занимает оставшееся пространство <code>1fr</code>.</p>
+		</div>
+		<h3>HTML</h3>
+
+		<p class="css">
+			&ltdiv class="parent"&gt <br>
+			&nbsp;&nbsp;&ltdiv class="child" &gt <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Min: 150px / Max: 25% <br>
+			&lt/div&gt <br>
+			&ltdiv class="child" &gt <br>
+			&nbsp;&nbsp;Этот блок занимает вторую позицию сетки (1fr), забирая оставшеюся часть пространства.
+			&lt/div&gt <br>
+			&lt/div&gt
+		</p>
+
+		<h3>CSS</h3>
+		<p class="css">
+			.parent { <br>
+			&nbsp;&nbsp;display: grid; <br>
+			&nbsp;&nbsp;grid-template-columns: minmax(150px, 25%) 1fr; }</p>
+
+		<!-- HTML 03. Боковая панель: grid-template-columns: minmax(<min>, <max>) 1fr) -->
+		<div class="sidePanel_parent">
+			<div class="sidePanel_child">
+				Мин: 150px / Макс: 25%
+			</div>
+			<div class="sidePanel_child">
+				Этот блок занимает вторую позицию сетки (1fr), забирая оставшуюся часть пространства. </div>
+		</div>
+		<!-- HTML 03. Боковая панель: grid-template-columns: minmax(<min>, <max>) 1fr) -->
+	</div>
+
+	<div class="pancakeStack">
+		<h2 id="pancakeStack">04. Липкий футер: <code>grid-template-rows: auto 1fr auto</code></h2>
+		<p>В отличие от примера с адаптивными блоками, здесь, при изменении размера экрана, расположение дочерних
+			элементов не меняется. Как правило, называемая липким футером, эта раскладка часто используется как на
+			вебсайтах, так и в мобильных приложениях, где футер это обычно панель инструментов.</p>
+		<p>Добавление <code>display: grid</code> к родительскому элементу создаст одноколоночную сетку. При этом, если в
+			разделе
+			"Main" будет недостаточно содержимого, чтобы достигнуть футера, данный блок всё равно увеличится, заполнив
+			свободное пространство по высоте.</p>
+		<p>Чтобы прикрепить футер к нижней части, добавьте <code>
+			display: grid;
+				grid-template-rows: auto 1fr auto;
+		</code></p>
+
+		<h3>HTML</h3>
+		<p class="css">
+			&lt;div class="parent"&gt; <br>
+			&nbsp;&nbsp;&lt;header class="header_child" > Header &lt;/header&gt; <br>
+			&nbsp;&nbsp;&lt;main class="main_child" > Main &lt;/main&gt; <br>
+			&nbsp;&nbsp;&lt;footer class="footer_child" > Footer Content &lt;/footer&gt; <br>
+			&lt;/div&gt;
+		</p>
+
+		<h3>CSS</h3>
+		<p class="css">
+			.parent { <br>
+			&nbsp;&nbsp;display: grid; <br>
+			&nbsp;&nbsp;grid-template-rows: auto 1fr auto;
+			}
+		</p>
+
+		<!-- HTML 04. Липкий футер: grid-template-rows: auto 1fr auto -->
+		<div class="pancakeStack_sample">
+			<div class="parent">
+				<header class="header_child" contenteditable=""> Header </header>
+				<main class="main_child" contenteditable=""> Main
+					<p>Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Грустный о
+						дал не знаках языкового решила подпоясал? Переписали точках пустился единственное диких ее
+						рыбными языкового журчит меня над? Жаренные.</p>
+				</main>
+				<footer class="footer_child" contenteditable=""> Footer Content </footer>
+			</div>
+		</div>
+
+		<p>Высота хедера и футера будет установлена автоматически на основании минимального размера содержимого, а
+			оставшееся свободное место <code>(1fr)</code> займёт раздел "Main"</p>
+
+		<!-- HTML 04. Липкий футер: grid-template-rows: auto 1fr auto -->
+
+	</div>
+
+	<div class="classicHolyGrail">
+		<div class="description">
+			<h2 id="classicHolyGrail">05. Классический "Святой Грааль":
+				<code>grid-template: auto 1fr auto / auto 1fr auto</code></h2>
+			<p>
+				В данной раскладке присутствуют хедер, футер, левая и правая боковая панель, а также блок с основным
+				содержимым. Он похож на предыдущий пример, но теперь с боковыми панелями.
+			</p>
+			<p>
+				Чтобы описать всю сетку с помощью одной строки кода, используйте свойство <code>grid-template</code>.
+				Это
+				свойство
+				позволяет
+				задавать значения для них обоих.
+			</p>
+			<p>
+				Записывается следующим образом: <code>grid-template: auto 1fr auto / auto 1fr auto</code>. Слеш
+				разделяет
+				значения для рядов <code>(grid-template-rows)</code> и колонок <code>(grid-template-columns)</code>
+				сетки.
+			</p>
+		</div>
+
+		<h3>HTML</h3>
+		<p class="css">
+			&lt;div class="parent"&gt; <br>
+			&nbsp;&nbsp;&lt;header class="header_child"&gt; Header &lt;/header&gt; <br>
+			&nbsp;&nbsp;&lt;div class="leftSide_child" contenteditable&gt; Left Sidebar &lt;/div&gt; <br>
+			&nbsp;&nbsp;&lt;main class="section_child" contenteditable&gt; Main Content &lt;/main&gt; <br>
+			&nbsp;&nbsp;&lt;div class="rightSide_child" contenteditable&gt; Right Sidebar &lt;/div&gt; <br>
+			&nbsp;&nbsp;&lt;footer class="footer_child"&gt; Footer &lt;/footer&gt; <br>
+			&lt;/div&gt;
+		</p>
+
+		<h3>CSS</h3>
+		<p class="css">
+			.parent { <br>
+			&nbsp;&nbsp;display: grid; <br>
+			&nbsp;&nbsp;grid-template: auto 1fr auto / auto 1fr auto; <br>
+			} <br> <br>
+
+			.header_child { <br>
+			&nbsp;&nbsp;padding: 2rem; <br>
+			&nbsp;&nbsp;grid-column: 1 / 4; <br>
+			} <br> <br>
+
+			.leftSide_child { <br>
+			&nbsp;&nbsp;grid-column: 1 / 2; <br>
+			} <br> <br>
+
+			.section_child { <br>
+			&nbsp;&nbsp;grid-column: 2 / 3; <br>
+			} <br> <br>
+
+			.rightSide_child { <br>
+			&nbsp;&nbsp;grid-column: 3 / 4; <br>
+			} <br> <br>
+
+			.footer_child { <br>
+			&nbsp;&nbsp;grid-column: 1 / 4; <br>
+			} <br> <br>
+		</p>
+		<!-- HTML 05. Классический "Святой Грааль": grid-template: auto 1fr auto / auto 1fr auto -->
+		<div class="classicHolyGrailSample">
+			<div class="parent">
+				<header class="header_child"> Header </header>
+				<div class="leftSide_child" contenteditable> Left Sidebar <p>Lorem ipsum dolor <br> sit amet consectetur
+						<br>
+						adipisicing elit. <br> Eos ratione laudantium <br> nobis eaque <br> accusantium quas <br> sit
+						omnis
+						<br> aliquam qui, <br>
+						provident voluptates, <br> incidunt, fugiat aliquid <br> nesciunt esse beatae <br> autem quam
+						doloribus.</p>
+				</div>
+				<main class="section_child" contenteditable> Main Content </main>
+				<div class="rightSide_child" contenteditable> Right Sidebar </div>
+				<footer class="footer_child"> Footer </footer>
+			</div>
+		</div>
+		<!-- HTML 05. Классический "Святой Грааль": grid-template: auto 1fr auto / auto 1fr auto -->
+		<p>Как и в прошлом примере, где размер хедера и футера определялся автоматически на основании содержимого, здесь
+			по такому же принципу определяется размер левой и правой боковых панелей. В этот раз речь о ширине, а не о
+			высоте.</p>
+	</div>
+
+	<div class="twelveColumns">
+		<div class="description">
+			<h2 id="twelveColumns">06. 12-колоночная сетка: <code>grid-template-columns: repeat(12, 1fr)</code>
+			</h2>
+			<p>В этом примере мы рассмотрим другой классический пример: 12-колоночную сетку. Вы можете быстро создавать
+				подобные сетки в CSS с помощью функции <code>repeat()</code>. Использование
+				<code>repeat(12, 1fr);</code> для шаблона колонок
+				сетки создаёт 12 колонок, каждая шириной <code>1fr</code>.</p>
+
+
+
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="twelveColumns_parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="twelveColumns_span12 section"&gt;Span 12&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="twelveColumns_span6 section"&gt;Span 6&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="twelveColumns_span4 section"&gt;Span 4&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="twelveColumns_span2 section"&gt;Span 2&lt;/div&gt; <br>
+				&lt;/div&gt;
+			</p>
+
+			<h3>CSS</h3>
+			<p class="css">
+				.twelveColumns_parent { <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;grid-template-columns: repeat(12, 1fr); <br>
+				} <br> <br>
+
+				.twelveColumns_span12 { <br>
+				&nbsp;&nbsp;grid-column: 1 / span 12; <br>
+				} <br> <br>
+
+				.twelveColumns_span6 { <br>
+				&nbsp;&nbsp;grid-column: 1 / span 6; <br>
+				} <br> <br>
+
+				.twelveColumns_span4 { <br>
+				&nbsp;&nbsp;grid-column: 4 / span 4; <br>
+				} <br> <br>
+
+				.twelveColumns_span2 { <br>
+				&nbsp;&nbsp;grid-column: 3 / span 2; <br>
+				} <br> <br>
+
+				/* Выравниваем текст по центру */ <br>
+				.section { <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;place-items: center; <br>
+				&nbsp;&nbsp;text-align: center <br> <br>
+				&nbsp;&nbsp;background-color: rgb(119, 172, 250); <br>
+				&nbsp;&nbsp;border: 1px solid #fff; <br>
+				&nbsp;&nbsp;color: #fff; <br>
+				&nbsp;&nbsp;height: 120px; <br>
+				&nbsp;&nbsp;font: 600 18px Arial; <br>
+				}
+			</p>
+
+			<!-- HTML 06. 12-колоночная сетка: grid-template-columns: repeat(12, 1fr) -->
+			<div class="twelveColumns_Sample">
+				<div class="twelveColumns_parent">
+					<div class="twelveColumns_span12 section">Span 12</div>
+					<div class="twelveColumns_span6 section">Span 6</div>
+					<div class="twelveColumns_span4 section">Span 4</div>
+					<div class="twelveColumns_span2 section">Span 2</div>
+				</div>
+			</div>
+			<!-- HTML 06. 12-колоночная сетка: grid-template-columns: repeat(12, 1fr) -->
+
+			<p>Теперь мы можем разместить на ней дочерние элементы. Один из вариантов - использовать grid-линии.
+				Например, колонка со свойством <code>grid-column: 1/13</code> будет начинаться с первой и заканчиваться
+				последней
+				(13-й) линией, охватывая все 12 колонок. Со свойством <code>grid-column: 1/5</code> - первые 4 колонки.
+			</p>
+			<h3>Другой способ размещения дочерних элементов</h3>
+			<p class="css">
+				.child-span-12 { <br>
+				&nbsp;&nbsp;grid-column: 1 / span 12; &nbsp;&nbsp; /* равносильно записи &nbsp;&nbsp; grid-column: 1 /
+				13 */
+				<br>
+				}
+			</p>
+			<p>Другой способ размещения дочерних элементов - использование ключевого слова <code>span</code>. В этом
+				случае задаётся
+				начальная линия и количество колонок, которое нужно охватить, начиная со стартовой точки. Например,
+				<code>grid-column: 1 / span 12</code> будет аналогом <code>grid-column: 1 / 13</code>, а
+				<code>grid-columns: 2 / span 6</code> - аналогом
+				<code>grid-column: 2 / 8</code>.</p>
+		</div>
+
+	</div>
+
+	<div class="RAM">
+		<h2 id="RAM">07. RAM (Repeat, Auto, MinMax): <code>grid-template-columns(auto-fit, minmax(<base>, 1fr))</code>
+		</h2>
+		<div class="description">
+			<p>В этом примере мы объединим некоторые из рассмотренных концепций создания отзывчивого интерфейса с
+				автоматически позиционируемыми и гибкими дочерними элементами. Довольно удобно. Ключевые термины
+				<code>repeat</code>,
+				<code>auto-(fit|fill)</code> и <code>minmax()</code> можно запомнить с помощью акронима RAM.</p>
+			<p>Всё вместе это выглядит так:</p>
+
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="ram_parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="ram_box"&gt;1&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="ram_box"&gt;2&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="ram_box"&gt;3&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;div class="ram_box"&gt;4&lt;/div&gt; <br>
+				&lt;/div&gt;
+			</p>
+			<h3>CSS</h3>
+			<p class="css">
+				.ram_parent { <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;grid-gap: 1rem; <br>
+				&nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); <br>
+				} <br> <br>
+
+				.ram_box { <br>
+				&nbsp;&nbsp;height: 150px; <br>
+				&nbsp;&nbsp;background-color: rgb(118, 165, 251); <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;place-items: center; <br>
+				&nbsp;&nbsp;color: #fff; <br>
+				&nbsp;&nbsp;font: 600 38px Arial; <br>
+				}
+			</p>
+			<!-- HTML 07. RAM (Repeat, Auto, MinMax): grid-template-columns(auto-fit, minmax(, 1fr)) -->
+			<div class="RAM_Sample">
+				<div class="ram_parent">
+					<div class="ram_box">1</div>
+					<div class="ram_box">2</div>
+					<div class="ram_box">3</div>
+					<div class="ram_box">4</div>
+				</div>
+			</div>
+			<!-- HTML 07. RAM (Repeat, Auto, MinMax): grid-template-columns(auto-fit, minmax(, 1fr)) -->
+			<p>Снова применяется функция <code>repeat()</code>, но на этот раз вместо числового значения используется
+				ключевое слово
+				<code>auto-fit</code>. Это активирует автоматическое расположение дочерних элементов, для которых
+				базовая минимальная
+				ширина равна <code>150px</code> но может увеличиваться до <code>1fr</code>. Это значит, что на маленьких
+				экранах они будут
+				занимать <code>1fr</code> ширины, а при появлении достаточного пространства, элементы, расположенные
+				ниже будут
+				перетекать в первую строку.
+
+			</p>
+			<p>Если в родительском элементе освобождается дополнительное место, в режиме <code>auto-fit</code> дочерние
+				элементы
+				будут растягиваться, чтобы это место заполнить. Если же изменить режим на <code>auto-fill</code>,
+				элементы не будут
+				превышать базовый размер из функции <code>minmax(<baseWidth>, 1fr)</code>.</p>
+		</div>
+
+	</div>
+
+	<div class="lineUp">
+		<div class="description">
+			<h2 id="lineUp">08. Ряд карточек: <code>justify-content: space-between</code></h2>
+			<p>Ключевым моментом данной раскладки является свойство <code>justify-content: space-between</code>, которое
+				размещает
+				первый и последний дочерние элементы у края родителя, поровну распределяя доступное пространство между
+				самими элементами. В нашем случае внутри карточек выбран режим раскладки Flexbox, с вертикальным
+				расположением элементов, заданным с использованием <code>flex-direction: column</code></p>
+			<p>Это размещает заголовок, описание и блок изображения в одну колонку внутри родительской карточки. Затем
+				применяется свойство <code>justify-content: space-between</code>, прикрепляющее первый (заголовок) и
+				последний (блок
+				изображения) элементы к краям, а блок описания между ними.</p>
+		</div>
+		<div class="lineUp_code">
+			<h3>HTML</h3>
+			<p class="css">
+
+				&lt;div class="lineUp_parent"&gt; <br> <br>
+				&nbsp;&nbsp;&lt;div class="lineUp_card"&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Title - Card 1&lt;/h3&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;p contenteditable>Medium length description with a few more words
+				here.&lt;/p&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="lineUp_visual"&gt;&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;/div&gt; <br> <br>
+				&nbsp;&nbsp;&lt;div class="lineUp_card"&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Title - Card 2&lt;/h3&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;p contenteditable>Long Description. Lorem ipsum dolor sit, amet consectetur
+				adipisicing
+				elit.&lt;/p&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="lineUp_visual"&gt;&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;/div&gt; <br> <br>
+				&nbsp;&nbsp;&lt;div class="lineUp_card"&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Title - Card 3&lt;/h3&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;p contenteditable&gt;Short Description.&lt;/p&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="lineUp_visual"&gt;&lt;/div&gt; <br>
+				&nbsp;&nbsp;&lt;/div&gt; <br> <br>
+				&lt;/div&gt;
+			</p>
+
+			<h3>CSS</h3>
+			<p class="css">
+				.lineUp_parent { <br>
+				&nbsp;&nbsp;height: auto; <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;grid-gap: 1rem; <br>
+				&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr); <br> <br>
+				&nbsp;&nbsp;background-color: rgb(255, 255, 255); <br>
+				&nbsp;&nbsp;padding: 50px 0 50px 0px; <br>
+				} <br> <br>
+
+				.lineUp_visual { <br>
+				&nbsp;&nbsp;height: 100px; <br>
+				&nbsp;&nbsp;width: 100%; <br> <br>
+				&nbsp;&nbsp;background-color: rgb(0, 195, 255);<br>
+				} <br> <br>
+
+				.lineUp_card { <br>
+				&nbsp;&nbsp;display: flex; <br>
+				&nbsp;&nbsp;flex-direction: column; <br>
+				&nbsp;&nbsp;padding: 1rem; <br>
+				&nbsp;&nbsp;justify-content: space-between; <br> <br>
+				&nbsp;&nbsp;border: 1px solid rgb(138, 78, 0); <br>
+				&nbsp;&nbsp;background-color: rgb(255, 193, 123); <br>
+				&nbsp;&nbsp;padding: 35px; <br>
+				} <br> <br>
+
+				.lineUp_parent h3 { <br>
+				&nbsp;&nbsp;margin: 0; <br> <br>
+				&nbsp;&nbsp;color: rgb(58, 58, 58); <br>
+				}
+			</p>
+		</div>
+
+		<div class="lineUp_Sample">
+			<div class="lineUp_parent">
+
+				<div class="lineUp_card">
+					<h3>Title - Card 1</h3>
+					<p contenteditable>Medium length description with a few more words here.</p>
+					<div class="lineUp_visual"></div>
+				</div>
+
+				<div class="lineUp_card">
+					<h3>Title - Card 2</h3>
+					<p contenteditable>Long Description. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+					<div class="lineUp_visual"></div>
+				</div>
+
+				<div class="lineUp_card">
+					<h3>Title - Card 3</h3>
+					<p contenteditable>Short Description.</p>
+					<div class="lineUp_visual"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="Clamping">
+		<div class="description">
+			<h2 id="Clamping">09. Стилизация с помощью Clamp:
+				<code>clamp(&lt;min&gt;, &lt;actual&gt;, &lt;max&gt;)</code></h2>
+			<p>Здесь мы познакомимся с технологией, менее поддерживаемой браузерами, но существенно влияющей на
+				концепцию отзывчивого дизайна интерфейсов. В этом демо ширина задаётся с использованием функции 'clamp':
+				<code>width: clamp(&lt;min&gt;, &lt;actual&gt;, &lt;max&gt;)</code>.</p>
+			<p>Она позволяет задать минимальное, предпочитаемое и максимальное значение.</p>
+			<h3>HTML</h3>
+			<p class="css">
+				&lt;div class="Clamping_parent"&gt; <br>
+				&nbsp;&nbsp;&lt;div class="ClampingCard_child"&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Title Here&lt;/h1&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="Clamping_yellow"&gt;&lt;/div&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
+				aliquid?&lt;/p&gt; <br>
+				&nbsp;&nbsp;&lt;/div&gt; <br>
+				&lt;/div&gt;
+			</p>
+
+			<h3>CSS</h3>
+			<p class="css">
+				.Clamping_parent { <br>
+				&nbsp;&nbsp;display: grid; <br>
+				&nbsp;&nbsp;place-items: center; <br>
+				} <br> <br>
+				.ClampingCard_child { <br>
+				&nbsp;&nbsp;width: clamp(23ch, 50%, 46ch); <br>
+				&nbsp;&nbsp;display: flex; <br>
+				&nbsp;&nbsp;flex-direction: column; <br>
+				&nbsp;&nbsp;padding: 1rem; <br> <br>
+
+				&nbsp;&nbsp;background-color: rgb(163, 203, 255); <br>
+				&nbsp;&nbsp;border: 1px solid rgb(0, 153, 255); <br>
+				} <br> <br>
+				.Clamping_yellow { <br>
+				&nbsp;&nbsp;height: 125px; <br>
+				&nbsp;&nbsp;width: 100%; <br> <br>
+
+				&nbsp;&nbsp;background-color: rgb(255, 242, 65); <br>
+				&nbsp;&nbsp;border: 1px solid rgb(146, 144, 0); <br>
+				}
+			</p>
+
+		</div>
+		<div class="Clamping_Sample">
+			<!-- 09. Стилизация с помощью Clamp: clamp(<min>, <actual>, <max>) -->
+			<div class="Clamping_parent">
+				<div class="ClampingCard_child">
+					<h1>Title Here</h1>
+					<div class="Clamping_yellow"></div>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, aliquid?</p>
+				</div>
+			</div>
+			<!-- 09. Стилизация с помощью Clamp: clamp(<min>, <actual>, <max>) -->
+		</div>
+
+		<p>Здесь минимальный размер - <code>23ch</code> или 23 единицы ширины символа, а максимальный -
+			<code>46ch</code>. Единицы ширины символа
+			основываются на размере шрифта элемента (в частности, ширине глифа 0). Предпочитаемая или "фактическая"
+			ширина карточки равняется 50%, что означает 50% ширины родительского элемента.</p>
+		<p>В этой ситуации функция <code>clamp()</code> позволяет элементу сохранять ширину 50% от родителя до тех пор,
+			пока она не
+			превысит <code>46ch</code> (на больших экранах) или не станет меньше <code>23ch</code> (на маленьких).
+			Видно, что во время увеличения
+			или уменьшения размера родительского элемента, ширина карточки соответственно увеличивается до максимального
+			возможного или уменьшается до минимально допустимого размера. Также, она остаётся по центру родительского
+			элемента, поскольку мы использовали для этого дополнительные свойства. Это обеспечивает больше удобства при
+			чтении, так как блок текста не будет слишком широким (более <code>46ch</code>) или слишком сжатым и узким
+			(менее <code>23ch</code>).
+		</p>
+		<p>Это также отличный способ реализовать отзывчивый размер шрифта. Например, можно написать:
+			<code>font-size:clamp(1.5rem, 20vw, 3rem)</code>. В этом случае размер шрифта заголовка всегда будет
+			оставаться в пределах между
+			<code>1.5rem</code> и <code>3rem</code>, но будет увеличиваться или уменьшаться в зависимости от размера
+			экрана, соответствуя значению
+			<code>20vw</code>.</p>
+		<p>Это отличный способ обеспечить удобство чтения, но помните, что данное свойство поддерживается ещё не во всех
+			современных браузерах, поэтому убедитесь, что не забыли про фолбек.</p>
+	</div>
+
+	<div class="RespectOfAspect">
+		<div class="description">
+			<h2 id="RespectOfAspect">10. Сохранение пропорций:
+				<code>aspect-ratio: &lt;width&gt; / &lt;height&gt;&lt;/height&gt;</code> </h2>
+			<p>И, наконец, последний инструмент - самый экспериментальный из всех. Он был недавно представлен в Chrome
+				Canary в Chromium 84, а Firefox ведёт активную работу над его внедрением, но пока что в стабильных
+				версиях браузеров он не поддерживается.</p>
+			<p>Тем не менее, я хочу упомянуть и его, потому что он решает достаточно часто встречаемую проблему -
+				сохранение пропорций изображений.</p>
+			<p>При использовании свойства <code>aspect-ration</code>, когда я изменяю размер карточки, зелёный блок
+				сохраняет
+				пропорции 16x9: <code>aspect-ration: 16 / 9</code>.</p>
+		</div>
+
+		<h3>HTML</h3>
+		<p class="css">
+			&lt;div class="RespectOfAspect_parent"&gt; <br>
+			&nbsp;&nbsp;&lt;div class="RespectOfAspect_card"&gt; <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Video Title&lt;/h1&gt; <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="RespectOfAspect_visual"&gt;&lt;/div&gt; <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>Descriptive Text. This demo works in Chromium 84+.&lt;/p&gt; <br>
+			&nbsp;&nbsp;&lt;/div&gt; <br>
+			&lt;/div&gt;
+		</p>
+
+		<h3>CSS</h3>
+		<p class="css">
+			.RespectOfAspect_parent { <br>
+			&nbsp;&nbsp;display: grid; <br>
+			&nbsp;&nbsp;place-items: center; <br>
+			} <br> <br>
+
+			.RespectOfAspect_card { <br>
+			&nbsp;&nbsp;aspect-ratio: 16 / 9; <br> <br>
+
+			&nbsp;&nbsp;background-color: rgb(108, 184, 255); <br>
+			&nbsp;&nbsp;border: 1px solid rgb(0, 89, 255); <br>
+			&nbsp;&nbsp;padding: 10px; <br>
+			} <br> <br>
+			.RespectOfAspect_visual { <br>
+			&nbsp;&nbsp;width: 50%; <br>
+			&nbsp;&nbsp;display: flex; <br>
+			&nbsp;&nbsp;flex-direction: column; <br>
+			&nbsp;&nbsp;padding: 1rem; <br>
+			}
+		</p>
+		<div class="RespectOfAspect_Sample">
+			<!-- 10. Сохранение пропорций: aspect-ratio: <width> / <height></height> -->
+			<div class="RespectOfAspect_parent">
+				<div class="RespectOfAspect_card">
+					<h1>Video Title</h1>
+					<div class="RespectOfAspect_visual"></div>
+					<p>Descriptive Text. This demo works in Chromium 84+.</p>
+				</div>
+			</div>
+			<!-- 10. Сохранение пропорций: aspect-ratio: <width> / <height></height> -->
+		</div>
+
+		<div class="description">
+			<p>Чтобы поддерживать соотношение сторон 16 x 9 без этого свойства, следует использовать хак с padding-top,
+				задав padding 56.25%. Но сСкоро у нас появится свойство, позволяющее не прибегать к этому хаку и
+				вычислению процентов. Можно сделать квадрат с соотношением сторон <code>1 / 1</code> или прямоугольник с
+				соотношением
+				<code>2 / 1</code>, или любым другим, необходимым для изображения определённых размеров.</p>
+			<p class="css">
+				.RespectOfAspect_card { <br>
+				&nbsp;&nbsp;aspect-ratio: 1 / 1;
+			</p>
+			<p>Хотя эта функция все еще находится на стадии разработки, о ней полезно знать, поскольку она решает
+				множество споров разработчиков, с которыми я и сама много раз сталкивалась, особенно когда речь идет о
+				видео и фреймах.</p>
+		</div>
+	</div>
+
+</body>
+
+</html>
